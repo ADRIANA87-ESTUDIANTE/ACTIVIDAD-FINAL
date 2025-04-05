@@ -93,7 +93,7 @@ print("resumen estadistico de las variables numericas sin duplicados")
 summary(datos_sin_duplicados)
 ##Verificar si hay variables numéricas
 variables_numericas <- names(datos_sin_duplicados)[sapply(datos_sin_duplicados, is.numeric)]
-if (length(variables_numericas) > 0) {
+if (length(variables_numericas) > 0) 
 
 
 ## VISUALIZACION BASICA DE UNA VARIABLE
@@ -103,22 +103,28 @@ install.packages("ggplot2")
 
 library(ggplot2)
 
-ggplot(datos,aes(x = Salario)) + 
-  geom_histogram(binwidth = 2000, fill = "yellow", color = "blue", alpha = 0.7) + 
+ggplot(datos_sin_duplicados,aes(x = Salario)) + 
+  geom_histogram(binwidth = 2000, fill = "purple", color = "green",alpha = 0.7) + 
   labs(title = "frecuencia salarios mujeres",
-       x= "variable numerica",
+       x= "salario",
        y= "frecuencia") + 
-  theme_linedraw()
+  theme_minimal()
 
 
 ggplot(datos,aes(x = Edad)) + 
   geom_histogram(binwidth = 20, fill = "pink", color = "blue", alpha = 1) + 
   labs(title = "frecuencia edad mujeres",
-       x= "variable numerica",
+       x= "edad",
        y= "frecuencia") + 
   theme_classic()
 
 print("grafico")
+
+####GIT HUB
+
+###CREAR REPOSITORIO
+
+## https://github.com/ADRIANA87-ESTUDIANTE/ACTIVIDAD-FINAL.git
 
 
   
